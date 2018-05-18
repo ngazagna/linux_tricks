@@ -1,0 +1,22 @@
+# Double-hop ssh confg file for accessing a Telecom ParisTech (TPT) computer from a remote not DSI-managed one
+
+# First ssh
+Host tpt
+hostname ssh.enst.fr
+user ngazagnadou
+
+# Second ssh (the one to use to access the TPT personnal account)
+Host tsilinuxd103
+hostname tsilinuxd103
+CheckHostIP no
+ProxyCommand ssh -q tpt nc -q0 tsilinuxd103 22; bash # to have a bash shell when arriving
+user ngazagnadou
+
+Host ssh
+HostName ssh.enst.fr
+Host *.enst.fr
+ProxyCommand ssh -q ssh /usr/bin/nc -w 1 %h 22
+IdentityFile    ~/.ssh/id_rsa
+User ngazagnadou
+ForwardAgent yes
+ForwardX11 no
