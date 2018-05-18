@@ -1,5 +1,7 @@
-# Linux
-This is a list of practical links and tricks in Unix environments.
+# Linux at TPT
+_Work in progress_
+
+This is a list of practical links and tricks in Unix environments in Telecom ParisTech.
 
 ## Remote acces
 - Connect to a remote acces: 
@@ -15,6 +17,5 @@ ssh tdsilinuxd103
 ```
 
 ## Managing printers
-_Work in progress_
 - First of all have a look at the [TPT help about printers](https://www.telecom-paristech.fr/vivre-ecole/services-numeriques-dsi/imprimantes-multifonctions/impression-centralisee/imprimer-depuis-gnulinux.html).
 - Try to install printers manually. For instance on Ubuntu 18.04 LTS : `Settings -> Devices -> Printers -> Additional Printer Settings`. Then, try to fill in information and config files by using the _Central_N_B.ppd_ and _Central_Couleur.ppd_ files provided by TPT (see previous link).
