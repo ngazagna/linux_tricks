@@ -10,7 +10,10 @@ You can also have a look at [here](https://github.com/TomDLT/TPT) for more infor
 ````console
 ssh [user]@[hostname]
 ````
-For instance at TPT: `[login]@ssh.enst.fr`.
+For instance at TPT: 
+````console
+<login>@ssh.enst.fr
+````
 - ssh login without password: well explained [here](http://www.linuxproblem.org/art_9.html).
 - Mount files for remote acces: with sshfs to be done (for instance to print from a remote computer). Basic configuration is well explained [here](https://doc.ubuntu-fr.org/sshfs). Then it works exactly lke a Dropbox.
 - Double-hop ssh: This can be usefull if you need to do 2 ssh in a row. First, download the _ssh_multi_hop_config_ file and save it in _~/.ssh/config_. Then, from a local non-DSI managed computer, one can access his TPT session by launching:
@@ -66,9 +69,9 @@ mkdir ~/perso_www
 sshfs <login>@perso-<login>.lxc.enst.fr:/home/<login>/www/ ~/perso_www
 ```
 
-WARNING: save all your files in a local folder, eg _perso_www_local_ and whenever your want to modify recreate a new _perso_www_ folder and mount it. This avoids from erasing all your local work with a hazardous 
+WARNING: save all your files in a local folder, eg _perso_www_local_, and whenever your want to modify recreate a new and EMPTY _~/perso_www_ folder and mount it. This avoids from erasing all your local work with a hazardous 
 ```console
-sshfs -o nonempty ... <login>@perso-<login>.lxc.enst.fr:/home/<login>/www/ ~/perso_www
+sshfs -o nonempty <login>@perso-<login>.lxc.enst.fr:/home/<login>/www/ ~/perso_www
 ```
 like I did in the first place...
 
