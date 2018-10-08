@@ -60,7 +60,9 @@ In order to host your website on your personal Télécom ParisTech page.
 https://moncompte.telecom-paristech.fr/mon_compte/
 In section "Page web personnelle", under "Service page perso" click on the drop-down menu and select "Service Web Apache 2.4 avec PHP 7 (basé sur Débian 9)"
 Your website is now available at:
+```
 https://perso.telecom-paristech.fr/<login>
+```
 
 - Step 2: now you may want to put your website files (HTML, CSS, etc) into the dedicated folder. The easiest way to proceed is to mount the remote repository.
 Open a terminal on a computer at TPT and run:
