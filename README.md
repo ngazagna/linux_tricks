@@ -7,17 +7,17 @@ You can also have a look at [here](https://github.com/TomDLT/TPT) for more infor
 
 ## Remote acces
 - Connect to a remote acces: 
-````console
+````
 ssh [user]@[hostname]
 ````
 For instance at TPT: 
-````console
+````
 <login>@ssh.enst.fr
 ````
 - ssh login without password: well explained [here](http://www.linuxproblem.org/art_9.html).
 - Mount files for remote acces: with sshfs to be done (for instance to print from a remote computer). Basic configuration is well explained [here](https://doc.ubuntu-fr.org/sshfs). Then it works exactly lke a Dropbox.
 - Double-hop ssh: This can be usefull if you need to do 2 ssh in a row. First, download the _ssh_multi_hop_config_ file and save it in _~/.ssh/config_. Then, from a local non-DSI managed computer, one can access his TPT session by launching:
-```console
+```
 ssh tdsilinuxd103
 ```
 
@@ -31,17 +31,17 @@ I recommend to use [jemdoc](http://jemdoc.jaboc.net/) which creates a very sober
 http://jemdoc.jaboc.net/download.html
 
 WARNING: if default python on your computer is not a 2.x version you may need to precise a python version in the first line of _jemdoc.py_. For instance:
-```console
+```
 #!/usr/bin/env python2.7
 ```
 
 - Step 2: make it executable by running
-```console
+```
 chmod +x jemdoc.py
 ```
 
 - Step 3: put it into your "PATH" for ease of use:
-```console
+```
 sudo cp jemdoc.py /usr/bin/jemdoc
 ```
 
@@ -64,13 +64,13 @@ https://perso.telecom-paristech.fr/<login>
 
 - Step 2: now you may want to put your website files (HTML, CSS, etc) into the dedicated folder. The easiest way to proceed is to mount the remote repository.
 Open a terminal on a computer at TPT and run:
-```console
+```
 mkdir ~/perso_www
 sshfs <login>@perso-<login>.lxc.enst.fr:/home/<login>/www/ ~/perso_www
 ```
 
 WARNING: save all your files in a local folder, eg _perso_www_local_, and whenever your want to modify recreate a new and EMPTY _~/perso_www_ folder and mount it. This avoids from erasing all your local work with a hazardous 
-```console
+```
 sshfs -o nonempty <login>@perso-<login>.lxc.enst.fr:/home/<login>/www/ ~/perso_www
 ```
 like I did in the first place...
@@ -79,11 +79,11 @@ like I did in the first place...
 
 WARNING: you may face a problem deleting the previous _index.html_ file from your local computer. I solved this issue by connecting to my remote website repository _/home/<login>/www/_ by ssh running:
 
-```console
+```
 ssh <login>@perso-<login>.lxc.enst.fr
 cd www
 ```
 And then deleted the symbolic link
-```console
+```
 rm index.html
 ```
