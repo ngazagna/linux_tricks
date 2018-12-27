@@ -1,8 +1,17 @@
-List of Linux useful commands
+## List of Linux useful commands
 
-- Extract a .tar.gz file
-tar -xvzf file.tar.gz
+## Extract a .tar.gz file
+$ tar -xvzf file.tar.gz
 
-- Create a symbolic like between an executable and a commmand
-sudo ln -s /path/to/exectuable /usr/local/bin/nameofthecommand
-because /usr/local/bin is in the path (use 'echo $PATH').
+## Create a symbolic like between an executable and a commmand
+$ sudo ln -s /path/to/exectuable /usr/local/bin/nameofthecommand
+# because /usr/local/bin is in the path (use 'echo $PATH').
+
+## Find all files that file status was last changed N minutes ago
+$ find -cmin -N
+# For example:
+$ find -cmin -5
+
+## Lauching a process and closing the terminal without killing it
+$ nohup <your_command> &
+# The ouput is printed in nohup.out
