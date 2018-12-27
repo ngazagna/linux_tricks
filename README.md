@@ -43,7 +43,7 @@ Then you can easily ssh into the remote machine without password with the follow
 ssh <login>@ssh.enst.fr
 ```
 
-Now you can configurate your `~:.ssh/config` file to create shorcuts. For instance if you sometimes want to connect to your remote account and some other times to one of the machines of your departement (let say *lamexx*)
+Now you can configurate your `~:.ssh/config` file to create shorcuts (see this [link](https://scotch.io/tutorials/how-to-create-an-ssh-shortcut) for easy examples). For instance if you sometimes want to connect to your remote account and some other times to one of the machines of your departement (let say *lamexx*)
 - Open (create if needed) `~:.ssh/config` and write
 ```
 Host tpt

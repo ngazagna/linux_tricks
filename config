@@ -1,0 +1,8 @@
+Host tpt
+    HostName ssh.enst.fr
+    User ngazagnadou
+    PubkeyAuthentication yes
+
+Host lame10
+    User ngazagnadou
+    ProxyCommand ssh -q tpt nc -q0 lame10 22

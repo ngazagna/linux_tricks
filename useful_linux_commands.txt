@@ -1,0 +1,8 @@
+List of Linux useful commands
+
+- Extract a .tar.gz file
+tar -xvzf file.tar.gz
+
+- Create a symbolic like between an executable and a commmand
+sudo ln -s /path/to/exectuable /usr/local/bin/nameofthecommand
+because /usr/local/bin is in the path (use 'echo $PATH').
