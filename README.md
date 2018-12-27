@@ -135,3 +135,8 @@ And then deleted the symbolic link
 ```
 rm index.html
 ```
+
+## Github
+To avoid entering your credentials everytime you push updates to your github repository try to apply the first (and validated) answer [here](https://stackoverflow.com/questions/8588768/how-do-i-avoid-the-specification-of-the-username-and-password-at-every-git-push)
+
+Remark: the procedure might have to be executed on each repository.
