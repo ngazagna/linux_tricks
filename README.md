@@ -22,6 +22,51 @@ where *<login>* is generally the first letter of your first name followed by you
 ssh tdsilinuxd103
 ```
 
+### Double ssh proxy and avoiding typing your password everytime
+Creating a double ssh proxy and creating a key pair to avoid typing your password every time:
+- As explained in this [answer](https://superuser.com/questions/8077/how-do-i-set-up-ssh-so-i-dont-have-to-type-my-password
+), to create a ssh key pair run 
+```
+ssh-keygen -t rsa
+```
+Use the default suggested path.
+- Upload the public key on your remote machine
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub <login>@ssh.enst.fr
+```
+- Load the key into the ssh agent by running
+```
+ssh-add
+```
+Then you can easily ssh into the remote machine without password with the following command:
+```
+ssh <login>@ssh.enst.fr
+```
+
+Now you can configurate your `~:.ssh/config` file to create shorcuts. For instance if you sometimes want to connect to your remote account and some other times to one of the machines of your departement (let say *lamexx*)
+- Open (create if needed) `~:.ssh/config` and write
+```
+Host tpt
+    HostName ssh.enst.fr
+    User <login>
+    PubkeyAuthentication yes # this is to avoid typing your password everytime
+
+Host lamexx
+    User <login>
+    ProxyCommand ssh -q tpt nc -q0 lamexx 22
+```
+- Then, you can run the following commands easily
+```
+ssh tpt # instead of ssh <login>@ssh.enst.fr
+```
+or 
+```
+ssh lamexx # instead of ssh <login>@ssh.enst.fr and then ssh lamexx
+```
+
+For more information on ssh shortcuts and multi hop check this [page](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts#Old_Methods_of_Passing_Through_Jump_Hosts
+).
+
 ## Managing printers
 - First of all have a look at the [TPT help about printers](https://www.telecom-paristech.fr/vivre-ecole/services-numeriques-dsi/imprimantes-multifonctions/impression-centralisee/imprimer-depuis-gnulinux.html).
 - Try to install printers manually. For instance on Ubuntu 18.04 LTS : `Settings -> Devices -> Printers -> Additional Printer Settings`. Then, try to fill in information and config files by using the _Central_N_B.ppd_ and _Central_Couleur.ppd_ files provided by TPT (see previous link).
