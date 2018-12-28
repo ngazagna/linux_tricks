@@ -4,14 +4,14 @@
 $ tar -xvzf file.tar.gz
 
 ## Create a symbolic like between an executable and a commmand
-$ sudo ln -s /path/to/exectuable /usr/local/bin/nameofthecommand
-# because /usr/local/bin is in the path (use 'echo $PATH').
+$ sudo ln -s /path/to/exectuable /usr/local/bin/nameofthecommand # because /usr/local/bin is in the path (use 'echo $PATH').
 
 ## Find all files that file status was last changed N minutes ago
 $ find -cmin -N
-# For example:
+
+# For example, if you look at files modified in the last 5 minutes
 $ find -cmin -5
 
 ## Lauching a process and closing the terminal without killing it
-$ nohup <your_command> &
-# The ouput is printed in nohup.out
+$ nohup <your_command> & # the ouput is printed in nohup.out
+$ nohup some_command &> anothername.out& # here the output is printed in anothername.out
