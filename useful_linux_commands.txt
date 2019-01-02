@@ -15,3 +15,10 @@ $ find -cmin -5
 ## Lauching a process and closing the terminal without killing it
 $ nohup <your_command> & # the ouput is printed in nohup.out
 $ nohup some_command &> anothername.out& # here the output is printed in anothername.out
+
+## List files ordered by date
+$ ls -t
+or for reverse, most recent at bottom
+$ ls -tr
+For `human readable`, `show hidden`, `print details`, `sort by date`
+$ ls -halt
