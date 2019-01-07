@@ -22,3 +22,11 @@ or for reverse, most recent at bottom
 $ ls -tr
 For `human readable`, `show hidden`, `print details`, `sort by date`
 $ ls -halt
+
+## Rotate pdf file 90 degrees
+For rotating clockwise:
+$ pdftk input.pdf cat 1-endeast output output.pdf
+For rotating anti-clockwise:
+$ pdftk input.pdf cat 1-endwest output output.pdf
+
+
